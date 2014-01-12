@@ -1,0 +1,26 @@
+{
+  "name": "PHPguide",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description" : "לימוד PHP, מדריכי בניית אתרים, לימוד SQL",
+  "icons": { "16": "icons/16x16.png", "48": "icons/48x48.png", "128": "icons/128x128.png" },
+
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/19x19.png",
+      "38": "icons/38x38.png"
+    },
+    "default_title": "PHPGuide",
+    "default_popup": "pages/main.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
